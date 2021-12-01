@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Questions</title>
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/master.css">
 	<link rel="stylesheet" href="scss/styles.css">
 
 </head>
@@ -17,22 +18,22 @@
 		<form action="" class="questions__form">
 
 			<label for="" class="questions__form-item">
-				<input type="radio">
+				<input type="radio" name="awnser">
 				awnser 1
 			</label>
 
 			<label for="" class="questions__form-item">
-				<input type="radio">
+				<input type="radio" name="awnser">
 				awnser 2
 			</label>
 
 			<label for="" class="questions__form-item">
-				<input type="radio">
+				<input type="radio" name="awnser">
 				awnser 3
 			</label>
 
 			<label for="" class="questions__form-item">
-				<input type="radio">
+				<input type="radio" name="awnser">
 				awnser 4
 			</label>
 
