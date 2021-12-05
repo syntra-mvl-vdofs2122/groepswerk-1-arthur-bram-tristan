@@ -12,36 +12,41 @@
 
 </head>
 
-<body class="body__questions">
-	<main class="questions__main">
-		<h2 class="questions__title">Question</h2>
-		<form action="" class="questions__form">
+<body>
+	<?php
+	include 'header.php';
+	?>
 
-			<label for="" class="questions__form-item">
-				<input type="radio" name="awnser">
-				awnser 1
-			</label>
+	<main class="questions">
+		<article class="questions__main">
+			<h2 class="questions__title">Question</h2>
+			<form action="" class="questions__form">
 
-			<label for="" class="questions__form-item">
-				<input type="radio" name="awnser">
-				awnser 2
-			</label>
+				<label for="" class="questions__form-item">
+					<input type="radio" name="awnser">
+					awnser 1
+				</label>
 
-			<label for="" class="questions__form-item">
-				<input type="radio" name="awnser">
-				awnser 3
-			</label>
+				<label for="" class="questions__form-item">
+					<input type="radio" name="awnser">
+					awnser 2
+				</label>
 
-			<label for="" class="questions__form-item">
-				<input type="radio" name="awnser">
-				awnser 4
-			</label>
+				<label for="" class="questions__form-item">
+					<input type="radio" name="awnser">
+					awnser 3
+				</label>
 
-			<input type="submit" value="Confirm" class="questions__form-submit">
-		</form>
+				<label for="" class="questions__form-item">
+					<input type="radio" name="awnser">
+					awnser 4
+				</label>
+
+				<input type="submit" value="Confirm" class="questions__form-submit">
+			</form>
 
 	</main>
-
+	</article>
 </body>
 
 </html>
