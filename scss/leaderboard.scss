@@ -1,0 +1,129 @@
+// Styles leaderboard.php
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap");
+
+$font-stack: "Ubuntu", sans-serif;
+$font-weight-titles: bold;
+
+html {
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(
+    circle,
+    rgba(0, 123, 255, 1) 0%,
+    rgba(30, 48, 66, 1) 76%
+  );
+  // background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+// container items
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  padding: 16px;
+  margin-top: 2em;
+
+  &__title {
+    background: radial-gradient(circle, rgba(0, 123, 255, 1) 0%);
+    font: $font-stack;
+    box-shadow: 0 15px 25px rgba(50, 0, 0, 0.6);
+    border-radius: 20px 20px 0px 0px;
+    font-weight: $font-weight-titles;
+    color: white;
+    width: 400px;
+    padding: 1.5em;
+    text-align: center;
+  }
+
+  &__legend-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 15px 25px rgba(50, 0, 0, 0.6);
+    // border-radius: 20px 20px 0px 0px;
+    padding: 0em 1em 0em 1em;
+  }
+
+  &__ranking-container {
+    width: 400px;
+    margin: 0 auto;
+    background: red;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+  }
+}
+
+// child items
+.legend {
+  &__name {
+    color: #0058a5;
+    font: $font-stack;
+    font-weight: $font-weight-titles;
+  }
+
+  &__logo {
+    width: 20%;
+    height: auto;
+  }
+
+  &__score {
+    color: #0058a5;
+    font: $font-stack;
+    font-weight: $font-weight-titles;
+  }
+}
+
+// child items
+.ranking {
+  &__player-list {
+    color: #0058a5;
+    font: $font-stack;
+    font-weight: bold;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: yellow;
+  }
+
+  &__player-item {
+  }
+
+  &__score-list {
+    color: #0058a5;
+    font: $font-stack;
+    font-weight: bold;
+    margin: 0 auto;
+    background-color: yellow;
+    list-style: none;
+    flex: display;
+    flex-direction: column;
+    // align-items: center;
+  }
+
+  &__score-item {
+    // ...
+  }
+}
