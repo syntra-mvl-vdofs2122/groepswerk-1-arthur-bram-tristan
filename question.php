@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,6 +50,8 @@
 				<input type="submit" value="Confirm" class="questions__form-submit">
 			</form>
 
+			<?php
+			?>
 	</main>
 	</article>
 </body>
