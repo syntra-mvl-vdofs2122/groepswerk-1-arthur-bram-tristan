@@ -1,25 +1,18 @@
-html {
-  box-sizing: border-box;
-  font-family: "sans-serif";
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 body {
   margin: auto;
+  background: radial-gradient(circle, #007bff 0%, #1e3042 76%);
+  background-size: contain;
 }
 
 .slogan {
   height: 75vh;
   width: 75vh;
-  background-color: aquamarine;
+  background-color: white;
   border-radius: 20px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-top: 5%;
 }
