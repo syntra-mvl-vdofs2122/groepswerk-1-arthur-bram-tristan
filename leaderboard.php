@@ -6,14 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/styles.scss">
-  <link rel="stylesheet" href="css/leaderboard.scss">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/leaderboard.css">
 
   <title>Leaderboards</title>
 
   <?php
   // require_once header.php
   // require_once footer.php
+
+  $myPDO = new PDO ('sqlite:../private/quiz.db');
   ?>
 
 

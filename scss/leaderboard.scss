@@ -65,7 +65,7 @@ body {
   &__ranking-container {
     width: 400px;
     margin: 0 auto;
-    background: red;
+    // background: red;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 0px 0px 20px 20px;
     display: flex;
@@ -105,7 +105,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: yellow;
+    // background-color: yellow;
+    padding-left: 1em;
+    border: solid green 2px;
   }
 
   &__player-item {
@@ -116,11 +118,28 @@ body {
     font: $font-stack;
     font-weight: bold;
     margin: 0 auto;
-    background-color: yellow;
+    // background-color: yellow;
     list-style: none;
     flex: display;
     flex-direction: column;
     // align-items: center;
+    .ranking__score-list {
+      color: #0058a5;
+      font: "Ubuntu", sans-serif;
+      font-weight: bold;
+      margin: 0 auto;
+      /* background-color: yellow; */
+      list-style: none;
+      -webkit-box-flex: display;
+      -ms-flex: display;
+      flex: display;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      /* justify-content: end; */
+      padding-left: 17em;
+    }
   }
 
   &__score-item {
