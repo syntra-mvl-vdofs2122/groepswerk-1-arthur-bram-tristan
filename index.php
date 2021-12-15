@@ -21,9 +21,6 @@ session_start();
   ?>
   <main class="slogan">
   <span class="slogan__text">#teamseas. Save the ocean!</span>
-  <form class="" action="input" method="post">
-    <button type="submit"> Take the quiz </button>
-  </form>
   <a href="question.php">take the quiz</a>
   </main>
 </body>
