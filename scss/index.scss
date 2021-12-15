@@ -11,7 +11,11 @@ html {
 $background-color: (#6c90c4);
 
 body {
-  background: linear-gradient(rgba(42, 67, 144, 1) 0%, rgba(26, 39, 62, 1) 20%);
+  background: linear-gradient(
+    90deg,
+    rgba(42, 67, 144, 1) 0%,
+    rgba(26, 39, 62, 1) 95%
+  );
   height: 100vh;
   width: 100%;
 }
