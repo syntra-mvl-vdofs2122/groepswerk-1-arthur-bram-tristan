@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+  font-family: "sans-serif";
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+$background-color: (#716cac);
+
+body {
+  background: linear-gradient(
+    #6c90c4,
+    #c27fa0,
+    #e3b7c8,
+    #e9d6cf,
+    #e3b7c8,
+    #c27fa0,
+    #a17baa,
+    #a17baa,
+    #262243
+  );
+}
