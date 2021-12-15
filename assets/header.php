@@ -9,6 +9,7 @@
 	<form action="" method="POST">
 	<input type="submit" value="Clear username" name="clearname">
 	<input type="submit" value="Clear all" name="clearall">
+	<input type="submit" value="Clear answers" name="clearanswers">
 	</form>
 	<?php
    
@@ -18,6 +19,10 @@
 	}
 	if(isset($_POST['clearall'])) {
 		unset($_SESSION['name']);
+		unset($_SESSION['answer1']);
+		unset($_SESSION['rightanswers']);
+	}
+	if(isset($_POST['clearanswers'])) {
 		unset($_SESSION['answer1']);
 		unset($_SESSION['rightanswers']);
 	}

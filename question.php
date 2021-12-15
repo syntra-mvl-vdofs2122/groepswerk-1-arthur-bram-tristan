@@ -102,13 +102,17 @@ if(isset($_POST['checkanswer1'])) {
 $_SESSION['answer1'] = $answer1;
 
 $rightawnser = 0;
-if($_SESSION['answer1'] = '164999999'){
-$rightawnser++;
-$_SESSION['rightanswers'] = $rightawnser;
-}
+if($_SESSION['answer1'] == '164999999'){
+	$rightawnser++;
+	$_SESSION['rightanswers'] = $rightawnser;
+	}
+	else{
+	$rightawnser = 0;
+	$_SESSION['rightanswers'] = $rightawnser;
+	}
 
 echo '<script type="text/JavaScript"> location.reload(); </script>';
-} else{
+}  else{
 
 } 
 
