@@ -18,7 +18,7 @@ session_start();
 
 <body>
   <?php
-  include 'header.php';
+  include 'assets/header.php';
   ?>
   <main class="slogan">
   <span class="slogan__text">#teamseas. Save the ocean!</span>
