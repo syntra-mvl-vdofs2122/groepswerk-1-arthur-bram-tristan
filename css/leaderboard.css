@@ -6,7 +6,6 @@ html {
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -14,37 +13,22 @@ html {
   background: radial-gradient(circle, #007bff 0%, #1e3042 76%);
   background-size: contain;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 
 .leaderboard {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   max-width: 1200px;
   padding: 16px;
   margin-top: 2em;
 }
-
 .leaderboard__title {
   background: radial-gradient(circle, #007bff 0%);
   font: "Ubuntu", sans-serif;
-  -webkit-box-shadow: 0 15px 25px rgba(50, 0, 0, 0.6);
   box-shadow: 0 15px 25px rgba(50, 0, 0, 0.6);
   border-radius: 20px 20px 0px 0px;
   font-weight: bold;
@@ -53,40 +37,22 @@ html {
   padding: 1.5em;
   text-align: center;
 }
-
 .leaderboard__legend-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   width: 400px;
   background-color: white;
-  -webkit-box-shadow: 0 15px 25px rgba(50, 0, 0, 0.6);
   box-shadow: 0 15px 25px rgba(50, 0, 0, 0.6);
   padding: 0em 1em 0em 1em;
 }
-
 .leaderboard__ranking-container {
   width: 400px;
   margin: 0 auto;
-  background: red;
-  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 0px 0px 20px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   margin-bottom: 2em;
 }
@@ -96,12 +62,10 @@ html {
   font: "Ubuntu", sans-serif;
   font-weight: bold;
 }
-
 .legend__logo {
   width: 20%;
   height: auto;
 }
-
 .legend__score {
   color: #0058a5;
   font: "Ubuntu", sans-serif;
@@ -113,32 +77,30 @@ html {
   font: "Ubuntu", sans-serif;
   font-weight: bold;
   list-style-position: inside;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  background-color: yellow;
+  padding-left: 1em;
+  border: solid green 2px;
 }
-
 .ranking__score-list {
   color: #0058a5;
   font: "Ubuntu", sans-serif;
   font-weight: bold;
   margin: 0 auto;
-  background-color: yellow;
   list-style: none;
-  -webkit-box-flex: display;
-  -ms-flex: display;
   flex: display;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
-/*# sourceMappingURL=leaderboard.css.map */
+.ranking__score-list .ranking__score-list {
+  color: #0058a5;
+  font: "Ubuntu", sans-serif;
+  font-weight: bold;
+  margin: 0 auto;
+  /* background-color: yellow; */
+  list-style: none;
+  flex: display;
+  flex-direction: column;
+  /* justify-content: end; */
+  padding-left: 17em;
+}/*# sourceMappingURL=leaderboard.css.map */

@@ -14,8 +14,8 @@ session_start();
   <title>Leaderboards</title>
 
   <?php
-	// include 'assets/header.php';
-  // require_once footer.php
+	include 'assets/header.php';
+  include 'assets/footer.php';
 
 
   use Psr\Http\Message\ResponseInterface as Response;
@@ -37,21 +37,69 @@ session_start();
   $db = new MyDB();
 
 ?>
-  <!-- <?php
-function playerScore($username){
 
+  <?php
+
+$score = $_SESSION['score'];
+$currentDate = $_SERVER['REQUEST_TIME'];
+$username = $_SESSION['username'];
+$sqlUser= "SELECT SCORE 
+            FROM leaderboard_score l
+            JOIN users u ON l.id = u.id
+            WHERE u.username = $username";
+$$_SESSION['lastScore'] = $db->exec($sqlUser);
+                
+$sqlId= "SELECT id FROM users 
+                      WHERE username = $username";
+$_SESSION['id'] = $db->exec($sqlId);
+
+
+function playerScore($username){
+    global $db;
+    
+    if($_SESSION['score'] > $_SESSION['lastScore']){
+    $sql = "UPDATE leaderboard_score
+              SET score = $_SESSION['score']
+              WHERE id = $_SESSION['id']";
+    
+    
+    
+    
+    $result = $db->exec($sql);
+    }
+    $sql2= "INSERT INTO leaderboard_score (id, score, date_high_score) VALUES ('".$_SESSION['id']."','".$_SESSION['score']."','".$_SERVER['REQUEST_TIME']."')"; 
+  
+  /* score ophalen uit de session
+  /* score toevoegen aan de leaderboard table las deze groter is dan de vorige score
+  /* de top 10 uit de leaderboard halen en inladen in de pagina
+
+
+  */
 }
 
-?> -->
+function leaderboardLoading(){
 
+  $sql_top10 = "SELECT username,
+                  score
+                  FROM leaderboard_score l JOIN users u
+                  ON u.id = l.id
+                  ORDER BY score DESC 
+                  LIMIT 10";
 
+  $result = $sql_top10->query($sql);
+  while($row = $result->fetch_assoc()) {
+    $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
+  }
+
+}
+?>
 </head>
 <?php
 $app->get('/leaderboard.php', function (Request $request, Response $response, array $args) {
   //header invoegen
   $response->getBody()->write('<body class="body__leaderboard">');
   $response->getBody()->write('<main class="leaderboard">');
-  $response->getBody()->write('h1 class="leaderboard__title">Leaderboard</h1>');
+  $response->getBody()->write('<h1 class="leaderboard__title">Leaderboard</h1>');
   $response->getBody()->write('<div class="leaderboard__legend-container legend">');
   $response->getBody()->write('<h2 class="legend__name"> Name </h2>');
   $response->getBody()->write('<img class="legend__logo" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Teamseas-logo.png"

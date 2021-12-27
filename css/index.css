@@ -1,18 +1,32 @@
+html {
+  box-sizing: border-box;
+  font-family: "sans-serif";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-  margin: auto;
-  background: radial-gradient(circle, #007bff 0%, #1e3042 76%);
-  background-size: contain;
+  background: linear-gradient(#2a4390 0%, #1a273e 95%);
+  height: 100vh;
+  width: 100%;
 }
 
 .slogan {
-  height: 75vh;
-  width: 75vh;
-  background-color: white;
+  height: 60vh;
+  width: 100vh;
   border-radius: 20px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  margin-top: 5%;
-}
+  font-size: 3rem;
+  color: white;
+  font-family: montserrat;
+  font-weight: 600;
+  text-transform: uppercase;
+}/*# sourceMappingURL=index.css.map */
