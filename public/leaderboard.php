@@ -1,3 +1,11 @@
+<!-- /* score ophalen uit de session
+/* score toevoegen aan de leaderboard table als deze groter is dan de vorige score
+/* de top 10 uit de leaderboard halen en inladen in de pagina
+
+
+*/ -->
+
+
 <?php
 session_start();
 ?>
@@ -12,12 +20,9 @@ session_start();
   <link rel="stylesheet" href="css/master.css">
 
   <title>Leaderboards</title>
-
-  <?php
-	include 'assets/header.php';
-  include 'assets/footer.php';
-
-
+</head>
+<?php
+	
   use Psr\Http\Message\ResponseInterface as Response;
   use Psr\Http\Message\ServerRequestInterface as Request;
   use Slim\Factory\AppFactory;
@@ -38,7 +43,7 @@ session_start();
 
 ?>
 
-  <?php
+<?php
 
 $score = $_SESSION['score'];
 $currentDate = $_SERVER['REQUEST_TIME'];
@@ -57,10 +62,10 @@ $_SESSION['id'] = $db->exec($sqlId);
 function playerScore($username){
     global $db;
     
-    if($_SESSION['score'] > $_SESSION['lastScore']){
-    $sql = "UPDATE leaderboard_score
-              SET score = $_SESSION['score']
-              WHERE id = $_SESSION['id']";
+    // if($_SESSION['score'] > $_SESSION['lastScore']){
+    // $sql = "UPDATE leaderboard_score
+    //           SET score = $_SESSION['score']
+    //           WHERE id = $_SESSION['id']";
     
     
     
@@ -69,13 +74,8 @@ function playerScore($username){
     }
     $sql2= "INSERT INTO leaderboard_score (id, score, date_high_score) VALUES ('".$_SESSION['id']."','".$_SESSION['score']."','".$_SERVER['REQUEST_TIME']."')"; 
   
-  /* score ophalen uit de session
-  /* score toevoegen aan de leaderboard table las deze groter is dan de vorige score
-  /* de top 10 uit de leaderboard halen en inladen in de pagina
 
 
-  */
-}
 
 function leaderboardLoading(){
 
@@ -88,15 +88,19 @@ function leaderboardLoading(){
 
   $result = $sql_top10->query($sql);
   while($row = $result->fetch_assoc()) {
-    $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  }
+    $playerScore = $row;
+    $response->getBody()->write('<li class="ranking__player-item">');
+    $response->getBody()->write($row);
+    $response->getBody()->write('</li>');
+    return $response;
 
 }
+}
 ?>
-</head>
+
 <?php
 $app->get('/leaderboard.php', function (Request $request, Response $response, array $args) {
-  //header invoegen
+  include 'assets/header.php';
   $response->getBody()->write('<body class="body__leaderboard">');
   $response->getBody()->write('<main class="leaderboard">');
   $response->getBody()->write('<h1 class="leaderboard__title">Leaderboard</h1>');
@@ -108,31 +112,11 @@ $app->get('/leaderboard.php', function (Request $request, Response $response, ar
   
   $response->getBody()->write('<div class="leaderboard__ranking-container ranking">');
   $response->getBody()->write('<ol class="ranking__player-list ">');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
-  $response->getBody()->write('<li class="ranking__player-item"> Player </li>');
+  $response->getBody()->write(leaderboardLoading());
   $response->getBody()->write('</ol>');
-  $response->getBody()->write('<ol class="ranking__score-list">');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
-  $response->getBody()->write('<li class="ranking__score-item"> score </li>');
   $response->getBody()->write('</ol></div></main></html>');
+  include 'assets/footer.php';
   return $response;
-  // footer invoegen
+  
 });
 $app->run();
